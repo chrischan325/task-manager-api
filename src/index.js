@@ -1,11 +1,4 @@
-const express = require('express')
-const User = require('./models/user')
-const Task = require('./models/task')
-const userRouter = require('./routers/user')
-const taskRouter = require('./routers/task')
-
-require('./db/mongoose')
-const app = express()
+const app = require('./app')
 const port = process.env.PORT
 
 // app.use((req, res, next) => { // will run after new request but before route handler
@@ -20,9 +13,6 @@ const port = process.env.PORT
 //     res.status(503).send('Site under maintenance')
 // })
 
-app.use(express.json()) //automatically parses incoming json into an object
-app.use(userRouter)
-app.use(taskRouter)
 
 // const jwt = require('jsonwebtoken')
 // const myFunction = async () => {
